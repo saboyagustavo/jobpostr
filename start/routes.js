@@ -1,5 +1,7 @@
 'use strict';
 
+const JobController = require('../app/Controllers/Http/JobController');
+
 /*
 |--------------------------------------------------------------------------
 | Routes
@@ -16,4 +18,4 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route');
 
-Route.on('/').render('index');
+Route.get('/', 'JobController.home');
