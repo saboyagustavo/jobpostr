@@ -23,6 +23,6 @@ Route.get('/', 'JobController.home');
 Route.post('/newJob', 'JobController.create');
 Route.put('/updateJob/:id', 'JobController.update');
 
-/*----- auth && signup -----*/
+/*----- user authentication -----*/
 Route.on('/signup').render('auth.signup');
 Route.on('/login').render('auth.login');

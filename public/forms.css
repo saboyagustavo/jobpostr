@@ -1,0 +1,53 @@
+.job-container {
+  grid-template-columns: auto;
+  padding: 2rem;
+  width: 30%;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  display: block;
+  width: calc(100% - 4rem);
+  padding: 0.5rem;
+  margin-bottom: 1.25rem;
+  border: 0.125rem solid var(--gray-100);
+  border-radius: 0.5rem;
+}
+
+#passwordInput {
+  margin-bottom: 0;
+}
+
+button[type="submit"] {
+  background-color: var(--gray-500);
+  margin-top: 1.25rem;
+  padding: 0.5rem;
+  border: 0;
+  border-radius: 0.25rem;
+  color: var(--white-100);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 0.125rem var(--gray-800);
+}
+
+button[type="submit"]:hover {
+  filter: brightness(1.1);
+}
+button[type="submit"]:active {
+  filter: brightness(0.9);
+  box-shadow: 0 2px var(--gray-500);
+}
+
+span {
+  display: block;
+  background: var(--yellow-500);
+  padding: 0.3em;
+  margin-bottom: 20px;
+  font-weight: bold;
+}

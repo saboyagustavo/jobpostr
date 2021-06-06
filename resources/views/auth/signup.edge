@@ -1,9 +1,9 @@
 @layout('layouts.main')
 
 
-{{--  @section('extracss')
-
-@endsection  --}}
+@section('extracss')
+  {{ style('forms') }}
+@endsection
 
 @section('title')
   JobPostr - Sign up
@@ -62,7 +62,4 @@
         <button type="submit">Join now</button>
       </form>
   </div>
-
-
-
 @endsection
