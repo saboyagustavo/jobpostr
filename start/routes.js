@@ -18,4 +18,11 @@ const JobController = require('../app/Controllers/Http/JobController');
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route');
 
+/*----- job controller -----*/
 Route.get('/', 'JobController.home');
+Route.post('/newJob', 'JobController.create');
+Route.put('/updateJob/:id', 'JobController.update');
+
+/*----- auth && signup -----*/
+Route.on('/signup').render('auth.signup');
+Route.on('/login').render('auth.login');
