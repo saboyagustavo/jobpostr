@@ -19,10 +19,6 @@ input[type="password"] {
   border-radius: 0.5rem;
 }
 
-#passwordInput {
-  margin-bottom: 0;
-}
-
 button[type="submit"] {
   background-color: var(--gray-500);
   margin-top: 1.25rem;
@@ -51,6 +47,6 @@ span.errorMessage {
   width: calc(100% - 4rem);
   padding: 0.3em;
   border-radius: 0.25rem;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
   text-align: center;
 }
