@@ -25,4 +25,5 @@ Route.put('/updateJob/:id', 'JobController.update');
 
 /*----- user authentication -----*/
 Route.on('/signup').render('auth.signup');
+Route.post('/signup', 'UserController.create').validator('CreateUser');
 Route.on('/login').render('auth.login');

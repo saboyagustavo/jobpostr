@@ -5,8 +5,9 @@
   {{ style('forms') }}
 @endsection
 
+
 @section('title')
-  JobPostr - Sign up
+JobPostr - Sign up
 @endsection
 
 @section('content')
@@ -14,7 +15,6 @@
   
   <div class="job-container">
     <form action="{{ route('UserController.create') }}" method="POST">
-        
         {{ csrfField() }}
         
         <label for="username">Username</label>
@@ -27,7 +27,7 @@
         >
         
         @if(hasErrorFor('username'))
-        <span>
+        <span class="errorMessage" >
           {{ getErrorFor('username') }}
         </span>
         @endif
@@ -39,9 +39,9 @@
           name="email" 
           value="{{ old('email', '') }}"
         >
-
+        
         @if(hasErrorFor('email'))
-          <span>
+          <span class="errorMessage" >
             {{ getErrorFor('email') }}
           </span>
         @endif
@@ -54,7 +54,7 @@
         >
         
         @if(hasErrorFor('password'))
-        <span>
+        <span class="errorMessage" >
           {{ getErrorFor('password') }}
         </span>
         @endif

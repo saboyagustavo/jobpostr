@@ -34,20 +34,23 @@ button[type="submit"] {
   text-transform: uppercase;
   font-weight: bold;
   box-shadow: 0 0.125rem var(--gray-800);
+  transition: filter 0.25s;
 }
 
 button[type="submit"]:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.125);
 }
 button[type="submit"]:active {
-  filter: brightness(0.9);
+  filter: brightness(0.8);
   box-shadow: 0 2px var(--gray-500);
 }
 
-span {
+span.errorMessage {
   display: block;
   background: var(--yellow-500);
+  width: calc(100% - 4rem);
   padding: 0.3em;
+  border-radius: 0.25rem;
   margin-bottom: 20px;
-  font-weight: bold;
+  text-align: center;
 }
