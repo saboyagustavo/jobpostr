@@ -8,23 +8,25 @@ class JobController {
     return view.render('index', { jobs: jobs.toJSON() });
   }
 
-  async create({ request, response }) {
+  async create({ auth, request, session, response }) {
     try {
       const { title, link, description } = request.body;
-      if (!title || !link || !description) {
-        throw new Error('MISSING REQUIRED INFORMATION!');
-      }
 
-      const job = new Job;
-      job.title = title;
-      job.link = link;
-      job.description = description;
+      const postedJob = await auth.user.jobs()
+        .create({
+          title,
+          link,
+          description
+        });
 
-      await job.save();
-      await response.status(201).send({ 'CREATED': job });
+      session.flash({ message: 'Your job has successfully been posted!' });
+      return response.status(201).redirect('back');
     } catch (error) {
-      await response.status(422).send({ 'ERROR': error.message });
+      await response.status(400).send({ 'ERROR': error.message });
     }
+  }
+  async userIndex({ view }) {
+    return view.render('jobs');
   }
 }
 module.exports = JobController;

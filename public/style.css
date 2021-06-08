@@ -17,6 +17,10 @@
   --gray-800: #303c49;
 
   --yellow-500: #eba417;
+
+  --red-300: #ed4337;
+
+  --green-300: #00ab66;
 }
 
 @media (max-width: 1080px) {

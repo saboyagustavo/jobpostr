@@ -20,8 +20,9 @@ const Route = use('Route');
 
 /*----- job controller -----*/
 Route.get('/', 'JobController.home');
-Route.post('/newJob', 'JobController.create');
-Route.put('/updateJob/:id', 'JobController.update');
+Route.get('/post-a-job', 'JobController.userIndex');
+Route.post('/post-a-job/update', 'JobController.create').validator('CreateJob');
+
 
 /*----- user authentication -----*/
 // signup

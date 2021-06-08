@@ -1,0 +1,56 @@
+@layout('layouts.main')
+
+@section('title')
+  JobPostr - Post your Job
+@endsection
+
+@section('extracss')
+  {{ style('forms') }}}
+@endsection
+@section('content')
+<div class="job-container">
+  <h1>Post your job!</h1>
+  @if(flashMessage('message'))
+    <span class="successMessage">{{ flashMessage('message') }}</span>
+  @endif
+  <form action="{{route('JobController.create')}}" method="POST">
+    {{ csrfField() }}
+
+    <label for="title">Title</label>
+    <input 
+      type="text"  
+      id="titleInput"
+      name="title" 
+      value="{{ old('title', '')}}"
+    >
+    @if(hasErrorFor('title'))
+      <span class="errorMessage">
+        {{ getErrorFor('title') }}
+      </span>
+    @endif
+
+    <label for="link">Link</label>
+    <input
+      type="text"
+      id="linkInput"
+      name="link"
+      value="{{ old('link') }}"
+    >
+    @if(hasErrorFor('link'))
+      <span class="errorMessage">{{ getErrorFor('link') }}</span>
+    @endif
+
+    <label for="description">Description</label>
+    <input 
+      type="text"
+      id="descriptionInput"
+      name="description"
+    >
+    @if(hasErrorFor('description'))
+      <span class="errorMessage">{{ getErrorFor('description') }}</span>
+    @endif
+
+    <button type="submit">Post the Job</button>
+  </form>
+</div>
+@endsection

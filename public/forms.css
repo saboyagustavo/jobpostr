@@ -48,5 +48,20 @@ span.errorMessage {
   padding: 0.3em;
   border-radius: 0.25rem;
   margin-bottom: 1rem;
+  color: var(--white-300);
+  font-weight: bold;
+  text-align: center;
+}
+
+span.successMessage {
+  display: block;
+  background: var(--green-300);
+  width: calc(100% - 4rem);
+  margin-bottom: 1rem;
+  padding: 0.3em;
+  border-radius: 0.25rem;
+
+  color: var(--white-300);
+  font-weight: bold;
   text-align: center;
 }
