@@ -32,5 +32,13 @@ class JobController {
       await response.status(400).send({ 'ERROR': error.message });
     }
   }
+
+  async delete({ params, session, response }) {
+    const job = await Job.find(params.id);
+    await job.delete();
+    session.flash({ message: 'Your job has successfully been removed!' });
+    return response.status(204).redirect('back');
+  }
+
 }
 module.exports = JobController;

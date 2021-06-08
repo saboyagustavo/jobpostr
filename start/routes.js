@@ -22,7 +22,7 @@ const Route = use('Route');
 Route.get('/', 'JobController.home');
 Route.get('/post-a-job', 'JobController.userIndex');
 Route.post('/post-a-job/update', 'JobController.create').validator('CreateJob');
-
+Route.get('/post-a-job/delete/:id', 'JobController.delete');
 
 /*----- user authentication -----*/
 // signup
