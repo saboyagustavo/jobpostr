@@ -1,14 +1,14 @@
 @layout('layouts.main')
 
-@!section('extracss')
+@section('extracss')
   {{style('forms')}}
 @endsection
 
-@!section('title')
+@section('title')
   JobPostr - Login
 @endsection
 
-@!section('content')
+@section('content')
   <h1>Welcome back!</h1>  
   <div class="job-container">
     @if(flashMessage('loginError'))

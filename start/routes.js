@@ -24,9 +24,13 @@ Route.post('/newJob', 'JobController.create');
 Route.put('/updateJob/:id', 'JobController.update');
 
 /*----- user authentication -----*/
+// signup
 Route.on('/signup').render('auth.signup');
 Route.post('/signup', 'UserController.create').validator('CreateUser');
+// login
 Route.on('/login').render('auth.login');
+Route.post('/login', 'UserController.login').validator('LoginUser');
+// logout
 Route.get('/logout', async ({ auth, response }) => {
   await auth.logout();
   return response.redirect('/');
