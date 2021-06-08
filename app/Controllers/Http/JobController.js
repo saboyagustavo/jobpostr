@@ -8,6 +8,13 @@ class JobController {
     return view.render('index', { jobs: jobs.toJSON() });
   }
 
+  async userIndex({ auth, view }) {
+    const jobs = await auth.user
+      .jobs()
+      .fetch();
+    return view.render('jobs', { jobs: jobs.toJSON() });
+  }
+
   async create({ auth, request, session, response }) {
     try {
       const { title, link, description } = request.body;
@@ -24,9 +31,6 @@ class JobController {
     } catch (error) {
       await response.status(400).send({ 'ERROR': error.message });
     }
-  }
-  async userIndex({ view }) {
-    return view.render('jobs');
   }
 }
 module.exports = JobController;
