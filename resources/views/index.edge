@@ -5,15 +5,11 @@ JobPostr - Post Your Jobs
 @endsection
 
 @section('content')
-<h1>All Jobs</h1>
-
-@each(job in jobs)
-<div class="job-container">
-  <div class="blank"></div>
-  <div class="job-info">
-    <h3><a href="{{job.link}}" target="_blank">{{job.title}}</a></h3>
-    <p>{{job.description}}</p>
-  </div>
-</div>
-@endeach
+  @loggedIn
+    <p>Hello {{user.username}},</p>
+    <h1>welcome back!</h1>
+  @else
+    <h1>Welcome to JobPostr</h1>
+    <p>Please register or log in.</p>
+  @endloggedIn
 @endsection

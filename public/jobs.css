@@ -1,0 +1,50 @@
+.job-container {
+  background: var(--white-100);
+  margin: 2rem auto;
+  display: flex;
+  border-radius: 0.5rem;
+  justify-content: space-between;
+  min-width: 100%;
+  padding: 2rem;
+}
+
+.job-title {
+  color: var(--gray-500);
+  letter-spacing: 0.125rem;
+}
+
+.job-info {
+  display: flex;
+  grid-template-rows: auto;
+  gap: 0.5rem;
+}
+
+.blank {
+  width: 6.25rem;
+  height: 6.25rem;
+  border: 1px solid lightgray;
+  border-radius: 0.375;
+}
+
+ul.job-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+ul li.action {
+  text-align: center;
+  padding: 0.25rem 1rem;
+  background: var(--gray-100);
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem var(--gray-500);
+}
+
+ul li.action:hover {
+  filter: brightness(1.125);
+}
+
+ul li.action:active {
+  filter: brightness(0.8);
+  box-shadow: 0 2px var(--gray-100);
+}

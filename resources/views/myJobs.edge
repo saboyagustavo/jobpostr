@@ -1,0 +1,27 @@
+@layout('layouts.main')
+
+@section('title')
+  JobPostr - Post your Job
+@endsection
+
+@section('extracss')
+  {{ style('jobs') }}}
+@endsection
+@section('content')
+<h1>All your Jobs</h1>
+  @each(job in jobs)
+    <div class="job-container">
+      <section class="job-info">
+      <div class="blank"></div>
+      <div class="job-text">
+        <h3 class="job-title"><a href="{{ job.link }}" target="_blank">{{ job.title }}</a></h3>
+        <p class="description">{{ job.description }}</p>
+      </div>  
+      </section>
+      <ul class="job-actions">
+          <li class="action"><a class="action-link" href="{{ route('JobController.edit', { id: job.id}) }}">Edit</a></li>
+          <li class="action"><a class="action-link" href="{{ route('JobController.delete', { id: job.id }) }}">Delete</a></li>
+      </ul>
+    </div>
+  @endeach
+@endsection

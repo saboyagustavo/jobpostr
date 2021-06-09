@@ -20,9 +20,10 @@ const Route = use('Route');
 
 /*----- job controller -----*/
 Route.get('/', 'JobController.home');
+Route.get('/jobs', 'JobController.userIndex');
 Route.post('/create/', 'JobController.create').validator('CreateJob');
 Route.group(() => {
-  Route.get('', 'JobController.userIndex');
+  Route.get('', 'JobController.newJob');
   Route.post('/update/:id', 'JobController.update').validator('CreateJob');
   Route.get('/edit/:id', 'JobController.edit');
   Route.get('/delete/:id', 'JobController.delete');

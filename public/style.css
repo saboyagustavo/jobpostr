@@ -50,6 +50,11 @@ select {
   font: 300 1rem "Montserrat", sans-serif;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 header {
   background-color: var(--gray-800);
   display: grid;
@@ -89,34 +94,15 @@ nav ul li a:hover {
 }
 
 .container {
-  width: calc(100% - 4rem);
+  max-width: 70rem;
   padding: 2rem;
+  margin: 0 auto;
   margin-top: 2rem;
 }
 
 h1 {
   margin-bottom: 1rem;
   color: var(--gray-800);
-}
-
-.job-container,
-.job-container2 {
-  background: var(--white-100);
-  border-radius: 0.5rem;
-  padding: 1rem;
-  margin: 0.625rem 0;
-  display: grid;
-  grid-template-columns: 7.5rem auto;
-}
-.subtitle {
-  color: var(--gray-500);
-  margin: 1rem 0;
-}
-.blank {
-  width: 6.25rem;
-  height: 6.25rem;
-  border: 1px solid lightgray;
-  border-radius: 0.375;
 }
 
 button {

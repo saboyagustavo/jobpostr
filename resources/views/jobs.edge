@@ -8,8 +8,8 @@
   {{ style('forms') }}}
 @endsection
 @section('content')
-<div class="job-container">
-  <h1>Post your job!</h1>
+<h1>Post your job!</h1>
+<div class="form-container">
   @if(flashMessage('message'))
     <span class="successMessage">{{ flashMessage('message') }}</span>
   @endif
@@ -53,19 +53,4 @@
     <button type="submit">Post the Job</button>
   </form>
 </div>
-
-<h2 class="subtitle">My jobs</h2>
-  @each(job in jobs)
-    <div class="job-container2">
-      <div class="blank"></div>
-      <div class="job-info">
-        <h3><a href="{{ job.link }}" target="_blank">{{ job.title }}</a></h3>
-        <p>{{ job.description }}</p>
-        <ul>
-          <li><a href="{{ route('JobController.edit', { id: job.id}) }}">Edit</a></li>
-          <li><a href="{{ route('JobController.delete', { id: job.id }) }}">Delete</a></li>
-        </ul>
-      </div>
-    </div>
-  @endeach
 @endsection

@@ -3,15 +3,14 @@
 class CreateJob {
   get rules() {
     return {
-      'title': 'required|unique:jobs',
-      'link': 'required|unique:jobs',
+      'title': 'required:jobs',
+      'link': 'required:jobs',
       'description': 'required'
     };
   }
   get messages() {
     return {
       'required': 'Hold up, the {{ field }} is required!',
-      'unique': 'Oh no, a job with that {{ field }} already exists!'
     };
   }
 
