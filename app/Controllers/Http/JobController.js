@@ -33,6 +33,24 @@ class JobController {
     }
   }
 
+  async edit({ params, view }) {
+    const job = await Job.find(params.id);
+    return view.render('edit', { job: job });
+  }
+
+  async update({ response, request, session, params }) {
+    const job = await Job.find(params.id);
+
+    job.title = request.all().title;
+    job.link = request.all().link;
+    job.description = request.all().description;
+
+    await job.save();
+
+    session.flash({ message: 'Your job has been updated!' });
+    return response.redirect('/post-a-job');
+  }
+
   async delete({ params, session, response }) {
     const job = await Job.find(params.id);
     await job.delete();

@@ -20,9 +20,14 @@ const Route = use('Route');
 
 /*----- job controller -----*/
 Route.get('/', 'JobController.home');
-Route.get('/post-a-job', 'JobController.userIndex');
-Route.post('/post-a-job/update', 'JobController.create').validator('CreateJob');
-Route.get('/post-a-job/delete/:id', 'JobController.delete');
+Route.post('/create/', 'JobController.create').validator('CreateJob');
+Route.group(() => {
+  Route.get('', 'JobController.userIndex');
+  Route.post('/update/:id', 'JobController.update').validator('CreateJob');
+  Route.get('/edit/:id', 'JobController.edit');
+  Route.get('/delete/:id', 'JobController.delete');
+}).prefix('/post-a-job');
+
 
 /*----- user authentication -----*/
 // signup
